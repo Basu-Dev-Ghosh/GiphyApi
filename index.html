@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Giphy Api</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Gif Generator By Basu</h1>
+        <hr>
+    </div>
+    <div class="input-box">
+        <input type="text" placeholder="Search here" id="text">
+        <input type="number" placeholder="How many gifs?" id="number">
+        <button onclick="ApiCall()">Search</button>
+        <button onclick="deletechild()" class="remove">Remove</button>
+        <h4>****   For see who is creating this enter "maker" or his name   ****</h4>
+    </div>
+    <div id="result">
+    </div>
+</body>
+<script>
+
+    // ................Api call..........................
+
+    async function ApiCall() {
+        let Api_Key = "zBtppOJ3fS3uzIzZSqHfU1VZBLSAeP3R"; // Api key from Giphy
+        let query = document.getElementById("text").value; // value from user
+        let limit = Number(document.getElementById("number").value); // limit from user
+        let url = `https://api.giphy.com/v1/gifs/search?api_key=${Api_Key}&q=${query}&limit=${limit}`; //making Url
+        let response = await fetch(url);  //fetching url
+        let json = await response.json();  //taking json file
+        loadApi(json); // calling loadApi function
+    }
+
+    //.............Load Api data in div.........................
+
+    async function loadApi(data) {
+        let limit = Number(document.getElementById("number").value);
+        let query = document.getElementById("text").value; // value from user
+        for (let i = 0; i < limit; i++) // creating for loop
+
+        {
+            //.................creating image tag..................
+
+            const im = document.createElement("img");
+
+            
+            
+            
+            
+            // ..........styling img tag..............
+            // ............creating my photo ......................
+
+            if (query == "creator" || query == "basu" || query == "basudev" || query == "Basu" || query == "Basudev" || query == "Creator" || query == "Maker" || query == "maker") {
+                im.src =`img/img${i+2}.jpeg`;
+                im.style.width = "300px";
+                im.style.height = "300px";
+            }
+
+            // ..........styling img tag...............
+            else{
+
+            im.src = data.data[i].images.downsized.url;
+            im.style.width = "300px";
+            im.style.height = "300px";
+            }
+
+            //..............Targeting div.................
+            const res = document.getElementById("result");
+
+            //...........styling div....................
+            res.style.width = "100vw";
+            res.style.display = "flex";
+            res.style.justifyContent = "space-around";
+            res.style.flexWrap = "wrap";
+
+            //...........appending child to div....................
+            res.appendChild(im);
+        }
+    }
+
+    //................remove function..........................
+
+    function deletechild() {
+        const res = document.getElementById("result");
+        res.innerHTML = "";
+        let query = document.getElementById("text").value = "";
+        let limit = document.getElementById("number").value = "";
+
+    }
+</script>
+
+</html>

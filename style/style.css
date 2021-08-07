@@ -1,0 +1,176 @@
+/* .........styling Body........... */
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #4a314d;
+    overflow-x: hidden;
+}
+
+/* .........styling title........... */
+
+.title
+{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+h1
+{
+   font-size: 60px;
+   color: #ace894;
+   text-transform: uppercase;
+}
+h4
+{
+    color: #ace894;
+    margin-left: 86px;
+}
+hr{
+    margin-top: -10px;
+    width: 800px;
+    
+}
+/* .........styling input boxes........... */
+
+.input-box
+{
+    width: 600px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#text
+{
+    width: 90%;
+    height: 20px;
+    padding: 10px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 200;
+    font-size: 25px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+}
+#number
+{
+    width: 90%;
+    height: 20px;
+    padding: 10px;
+    margin-left: 30px;
+    text-align: center;
+    font-weight: 200;
+    font-size: 25px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+}
+
+/* .........styling buttons........... */
+
+.input-box button
+{
+
+    width: 38%;
+    height: 55px;
+    padding: 7px;
+    margin-left: 62px;
+    text-align: center;
+    font-weight: 400;
+    display: inline-block;
+    font-size: 32px;
+    border: 0;
+    color: #4a314d;
+    background-color: #ace894;
+    margin-top: 35px;
+    outline: none;
+    border-radius: 30px;
+    transition: .5s;
+}
+.remove
+{
+    background-color: rgb(251, 115, 115) !important; 
+    color: #fff !important;
+    
+}
+.remove:hover
+{
+    background-color: rgb(0, 0, 0) !important; 
+    color: rgb(255, 255, 255) !important;
+    
+}
+.input-box button:hover{
+    background-color: #fff;
+}
+
+input:focus
+{
+    background-color: #ace894;
+    color: #4a314d;
+}
+
+/* .........Adding responsiveness........... */
+
+@media only screen and (max-width:600px) {
+h1
+{
+    text-align: center;
+    font-size: 40px
+}
+h4
+{
+    font-size:10px;
+    margin-left: 36px;
+}
+.input-box
+{
+    width: 339px;
+    display: flex;
+    margin-left: -3px;
+   
+}
+#text
+{
+    
+    width: 82%;
+    height: 35px;
+    padding: 11px;
+    margin-left: 32px;
+    margin-bottom: 14px;
+    text-align: center;
+    font-weight: 200;
+    font-size: 31px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+}
+#number
+{
+  
+    width: 82%;
+    height: 35px;
+    padding: 11px;
+    margin-left: 32px;
+    margin-bottom: 14px;
+    text-align: center;
+    font-weight: 200;
+    font-size: 31px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+}
+.input-box button 
+{
+    margin-left: 82px;
+    width: 200px;
+    margin-top: 6px;
+}
+
+
+}
